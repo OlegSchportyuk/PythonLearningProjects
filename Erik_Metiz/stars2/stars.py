@@ -74,6 +74,23 @@ class Stars():
         star.rect.y = star.rect.height + 2 * star.rect.height * row_number
         self.stars.add(star)
 
+    #def _check_fleet_edges(self):
+    #    """Реагирует на достижение пришельцем края экрана."""
+    #    for alien in self.aliens.sprites():
+    #        if alien.check_edges():
+    #            self._change_fleet_direction()
+    #            break
+
+    #def _change_fleet_direction(self):
+    #    """Опускает весь флот и меняет направление флота."""
+    #    for alien in self.aliens.sprites():
+    #        alien.rect.y += self.settings.fleet_drop_speed
+    #    self.settings.fleet_direction *= -1
+
+    #def _update_aliens(self):
+    #    """Обновляет позиции всех пришельцев во флоте."""
+    #    self._check_fleet_edges()
+    #    self.aliens.update()
 
 if __name__ == '__main__':
     # Создание экземпляра и запуск игры.
