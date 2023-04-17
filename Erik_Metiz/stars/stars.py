@@ -20,7 +20,7 @@ class Stars():
 
         self.stars = pygame.sprite.Group()
 
-        self._create_fleet()
+        self._create_stars()
 
     def run_game(self):
         """Запуск основного цикла игры."""
@@ -49,7 +49,7 @@ class Stars():
         # Отображение последнего прорисованного экрана.
         pygame.display.flip()
 
-    def _create_fleet(self):
+    def _create_stars(self):
         """Создание звезд."""
         star = Star(self.screen, self.settings)
         star_width, star_height = star.rect.size
