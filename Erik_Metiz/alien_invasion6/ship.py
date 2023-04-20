@@ -27,10 +27,6 @@ class Ship():
 
     def update(self):
         """Обновляет позицию корабля с учетом флагов."""
-        #if self.moving_right and self.rect.right < self.screen_rect.right:
-        #    self.x += self.settings.ship_speed
-        #if self.moving_left and self.rect.left > 0:
-        #    self.x -= self.settings.ship_speed
         if self.moving_up and self.rect.top > 0:
             self.y -= self.settings.ship_speed
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
@@ -43,3 +39,8 @@ class Ship():
     def blitme(self):
         """Рисует корабль в текущей позиции."""
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        """Размещает корабль в центре левой стороны."""
+        self.rect.midleft = self.screen_rect.midleft
+        self.y = float(self.rect.y)
