@@ -93,6 +93,7 @@ class AlienInvasion():
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
+            self._save_high_score()
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
@@ -242,6 +243,12 @@ class AlienInvasion():
                 # Происходит то же, что при столкновении с кораблем.
                 self._ship_hit()
                 break
+
+    def _save_high_score(self):
+        """Сохраняет рекордный счет в файле."""
+        filename = 'high_score.txt'
+        with open(filename, 'w') as f:
+            f.write(str(self.stats.high_score))
 
 
 if __name__ == '__main__':
